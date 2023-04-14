@@ -8,7 +8,6 @@ export const TETROMINOES = {
       [0, 1, 0, 0],
       [0, 1, 0, 0],
     ],
-    // classname is tetromino tetromino__i
     className: `${className} ${className}__i`,
   },
   J: {
@@ -75,6 +74,7 @@ export const rotate = ({ piece, direction }) => {
   const newPiece = piece.map((_, index) =>
     piece.map((column) => column[index])
   );
+
   // Reverse rows to get a rotated matrix
   if (direction > 0) return newPiece.map((row) => row.reverse());
 

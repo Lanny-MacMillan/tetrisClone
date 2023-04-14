@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useState, useCallback } from "react";
 
 export const useGameOver = () => {
   const [gameOver, setGameOver] = useState(true);

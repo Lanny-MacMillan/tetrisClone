@@ -58,20 +58,25 @@ const attemptMovement = ({ board, action, player, setPlayer, setGameOver }) => {
   let isFastDropping = false;
 
   if (action === Action.FastDrop) {
+    // will move tetromino down to collision
     isFastDropping = true;
   } else if (action === Action.SlowDrop) {
+    // will move tetromino down one row
     delta.row += 1;
   } else if (action === Action.Left) {
+    // will move tetromino left one row
     delta.column -= 1;
   } else if (action === Action.Right) {
+    // will move tetromino right one row
     delta.column += 1;
   }
 
+  // get back wherever weve collided and what the next position should be
   const { collided, nextPosition } = movePlayer({
-    delta,
-    position: player.position,
-    shape: player.tetromino.shape,
-    board,
+    delta, // how much were trying to move
+    position: player.position, // our current player position
+    shape: player.tetromino.shape, // have to pass shape or curretn tetromino
+    board, // give board to compare and see if move is allowable
   });
 
   // Did we collide immediately? If so, game over, man!

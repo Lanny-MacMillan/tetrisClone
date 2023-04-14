@@ -1,7 +1,11 @@
 import React from "react";
 import "./GameController.css";
+
 import { playerController } from "../../util/PlayerController";
-import { Action, actionForKey } from "../../util/Input";
+import { Action, actionForKey, actionIsDrop } from "../../util/Input";
+
+import { useDropTime } from "../../hooks/useDropTime";
+import { useInterval } from "../../hooks/useInterval";
 
 const GameController = ({
   board,
@@ -10,18 +14,37 @@ const GameController = ({
   setGameOver,
   setPlayer,
 }) => {
-  // using code to get the key code for arrows keys and qww
+  const [dropTime, pauseDropTime, resumeDropTime] = useDropTime({
+    gameStats,
+  });
+
+  useInterval(() => {
+    handleInput({ action: Action.SlowDrop });
+  }, dropTime);
+
   const onKeyUp = ({ code }) => {
     const action = actionForKey(code);
-    console.log("onKeyUpAction", action);
-    if (action === Action.Quit) {
-      setGameOver(true);
-    }
+    if (actionIsDrop(action)) resumeDropTime();
   };
+
   const onKeyDown = ({ code }) => {
     const action = actionForKey(code);
-    console.log("onKeyDownAction", action);
-    handleInput({ action });
+
+    if (action === Action.Pause) {
+      if (dropTime) {
+        pauseDropTime();
+      } else {
+        resumeDropTime();
+      }
+    } else if (action === Action.Quit) {
+      setGameOver(true);
+    } else {
+      if (actionIsDrop(action)) pauseDropTime();
+      if (!dropTime) {
+        return;
+      }
+      handleInput({ action });
+    }
   };
 
   const handleInput = ({ action }) => {
