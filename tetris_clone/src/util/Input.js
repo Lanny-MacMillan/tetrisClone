@@ -20,5 +20,6 @@ export const Key = {
 
 export const actionIsDrop = (action) =>
   [Action.SlowDrop, Action.FastDrop].includes(action);
+// given an action is it slow drop or fast drop
 
 export const actionForKey = (keyCode) => Key[keyCode];

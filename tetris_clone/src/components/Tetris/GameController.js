@@ -31,15 +31,19 @@ const GameController = ({
     const action = actionForKey(code);
 
     if (action === Action.Pause) {
+      // pause === "P" will resume on input
       if (dropTime) {
-        pauseDropTime();
+        // means were dropping in play
+        pauseDropTime(); // if were dropping - pause
       } else {
-        resumeDropTime();
+        // if were not dropping it means wer are in pause
+        resumeDropTime(); // if !dropping - resume
       }
     } else if (action === Action.Quit) {
+      // pause === "Q"
       setGameOver(true);
     } else {
-      if (actionIsDrop(action)) pauseDropTime();
+      if (actionIsDrop(action)) pauseDropTime(); // if were dropping we want to pause the drop time
       if (!dropTime) {
         return;
       }

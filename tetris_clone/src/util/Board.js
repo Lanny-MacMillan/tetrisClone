@@ -14,21 +14,23 @@ export const buildBoard = ({ rows, columns }) => {
 };
 
 const findDropPosition = ({ board, position, shape }) => {
-  let max = board.size.rows - position.row + 1;
-  let row = 0;
+  let max = board.size.rows - position.row + 1; // total rows for board minus current position, then add 1
+  let row = 0; // initial row 0
 
   for (let i = 0; i < max; i++) {
-    const delta = { row: i, column: 0 };
-    const result = movePlayer({ delta, position, shape, board });
-    const { collided } = result;
+    // basically keep trying to place the piece and see if we geta  collision or not
+    const delta = { row: i, column: 0 }; // delta is how many rows ahead we're looking
+    const result = movePlayer({ delta, position, shape, board }); // move player and store result
+    const { collided } = result; // checking for collision, pulled from result
 
     if (collided) {
+      // if we collide stop to get out of loop
       break;
     }
-
+    // if no collision keep looping
     row = position.row + i;
   }
-
+  // return our position and override row
   return { ...position, row };
 };
 
@@ -50,17 +52,18 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
 
   // Place ghost
   const className = `${tetromino.className} ${
-    player.isFastDropping ? "" : "ghost"
+    player.isFastDropping ? "" : "ghost" // assigns ghost classname when player is fastdropping
   }`;
   rows = transferToBoard({
+    // transfer ghost to the board here
     className,
-    isOccupied: player.isFastDropping,
+    isOccupied: player.isFastDropping, // if your fast dropping space will be condiered occupied for immediate collision
     position: dropPosition,
     rows,
     shape: tetromino.shape,
   });
 
-  // Place the piece.
+  // Place the piece under normal drop.
   // If it collided, mark the board cells as collided
   if (!player.isFastDropping) {
     rows = transferToBoard({
@@ -76,14 +79,17 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
   const blankRow = rows[0].map((_) => ({ ...defaultCell }));
   let linesCleared = 0;
   rows = rows.reduce((acc, row) => {
+    // reduce rows
+    // accumulator will be empty array initially,
     if (row.every((column) => column.occupied)) {
+      // and then for the row is every column occupied, if it is its a cleaered line, increase lines cleared by 1
       linesCleared++;
-      acc.unshift([...blankRow]);
+      acc.unshift([...blankRow]); // for cleared lines add blank row to the begining of our rows
     } else {
-      acc.push(row);
+      acc.push(row); // push new row on to the end of the list
     }
 
-    return acc;
+    return acc; // return accumulator
   }, []);
 
   if (linesCleared > 0) {
