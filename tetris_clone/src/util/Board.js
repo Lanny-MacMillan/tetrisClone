@@ -110,10 +110,14 @@ export const nextBoard = ({ board, player, resetPlayer, addLinesCleared }) => {
 
 export const hasCollision = ({ board, position, shape }) => {
   for (let y = 0; y < shape.length; y++) {
+    // go through each row
+
     const row = y + position.row;
 
     for (let x = 0; x < shape[y].length; x++) {
+      // go through each column
       if (shape[y][x]) {
+        // checks if there is a piece of tetromino at that position, checking for 1s in the Tetromino list
         const column = x + position.column;
 
         if (
@@ -132,13 +136,15 @@ export const hasCollision = ({ board, position, shape }) => {
 
 export const isWithinBoard = ({ board, position, shape }) => {
   for (let y = 0; y < shape.length; y++) {
+    // go through each row
     const row = y + position.row;
 
     for (let x = 0; x < shape[y].length; x++) {
+      // go through each column
       if (shape[y][x]) {
-        const column = x + position.column;
-        const isValidPosition = board.rows[row] && board.rows[row][column];
-
+        // checks if there is a piece of tetromino at that position, checking for 1s in the Tetromino list, if true
+        const column = x + position.column; // take column of piece and add our current position
+        const isValidPosition = board.rows[row] && board.rows[row][column]; // is this a valod position
         if (!isValidPosition) return false;
       }
     }

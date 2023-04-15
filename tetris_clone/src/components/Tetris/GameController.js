@@ -40,14 +40,14 @@ const GameController = ({
         resumeDropTime(); // if !dropping - resume
       }
     } else if (action === Action.Quit) {
-      // pause === "Q"
+      // quit === "Q"
       setGameOver(true);
     } else {
       if (actionIsDrop(action)) pauseDropTime(); // if were dropping we want to pause the drop time
       if (!dropTime) {
         return;
       }
-      handleInput({ action });
+      handleInput({ action }); // pass the action into the handleInput
     }
   };
 

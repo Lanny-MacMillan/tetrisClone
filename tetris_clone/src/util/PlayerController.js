@@ -78,10 +78,12 @@ const attemptMovement = ({ board, action, player, setPlayer, setGameOver }) => {
     shape: player.tetromino.shape, // have to pass shape or curretn tetromino
     board, // give board to compare and see if move is allowable
   });
-
+  console.log("COLLIDED STATE", collided);
+  console.log("CURRENT PLAYER POSITION", player.position);
   // Did we collide immediately? If so, game over, man!
   const isGameOver = collided && player.position.row === 0;
   if (isGameOver) {
+    // send to game over page, set game over there
     setGameOver(isGameOver);
   }
 
