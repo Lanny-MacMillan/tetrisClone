@@ -1,3 +1,28 @@
 .Tetris {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* outline: 2px solid cyan; */
+  /* max-width: 1275px;
+  max-height: 1593px; */
+}
+
+.TetrisBoard {
+  display: flex;
+  flex-direction: column;
+}
+
+.TetrisInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* outline: 4px solid; */
+  margin: 2em 0 2em 0;
+}
+.TetrisPreviews {
+  /* outline: 2px solid rgb(242, 0, 255); */
+
+}
+.TetrisGameStats {
+  /* outline: 2px solid cyan; */
 }

@@ -1,14 +1,12 @@
 .GameStats {
-  position: absolute;
-  width: 22vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style-type: none;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.GameStats__left {
-  right: 0;
-  top: 22vh;
-  text-align: left;
+  /* outline: 2px solid purple; */
+  height: auto;
+  border-radius: 10px;
 }
 
 .GameStats__right {
