@@ -9,10 +9,12 @@ const Game = ({ rows, columns }) => {
   const start = () => {
     resetGameOver();
   };
-
+  console.log("GAMEOVER STATE", gameOver);
   return (
     <div className="Game">
       {gameOver ? (
+        // 1) send to game over page
+        // 2) game over page will redirect to Game.js
         <Menu onClick={start} />
       ) : (
         <Tetris setGameOver={setGameOver} rows={rows} columns={columns} />
