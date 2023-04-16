@@ -1,7 +1,6 @@
 .GameStats {
   display: flex;
   flex-direction: column;
-  align-items: center;
   list-style-type: none;
   color: rgba(255, 255, 255, 0.5);
   /* outline: 2px solid purple; */
@@ -19,4 +18,46 @@
   font-size: 2.8rem;
   margin-bottom: 0.5em;
   color: rgba(255, 255, 255, 1);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .GameStats .value { 
+    font-size: 1rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .GameStats .value { 
+    font-size: 1.5rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .GameStats .value { 
+    font-size: 2.8rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .GameStats .value { 
+    font-size: 2.8rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .GameStats .value { 
+    font-size: 2.8rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+  .GameStats .value { 
+    width: 20vw; 
+  }
 }

@@ -2,8 +2,10 @@
   margin: 2em auto;
   display: grid;
   grid-gap: 2px;
-  width: 45vw;
+  width: 25vw;
   height: 90vh;
+  /* width: 45vw;
+  height: 90vh; */
   background: rgb(32, 0, 64);
   border: 10px solid rgb(32, 0, 64);
   border-radius: 10px;
@@ -13,22 +15,20 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .Board { 
-    /* width: 50vw;  */
+    width: 50vw; 
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .Board { 
-    /* NEEDS WORK */
-    /* width: 50vw;  */
+    width: 45vw; 
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .Board { 
-    /* NEEDS WORK */
     /* width: 50vw;  */
   }
 }
@@ -36,7 +36,6 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .Board { 
-    /* NEEDS WORK */
     /* width: 50vw;  */
   }
 }
@@ -44,7 +43,13 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .Board { 
-    /* NEEDS WORK */
-    /* width: 50vw;  */
+    width: 40vw; 
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+  .Board { 
+    width: 30vw; 
   }
 }
