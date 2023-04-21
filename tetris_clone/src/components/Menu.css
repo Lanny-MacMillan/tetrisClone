@@ -3,31 +3,29 @@
 .MenuContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  z-index: 100;
-  /* outline: 2px solid rgb(242, 0, 255); */
-  height: 90vh;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
 }
 .Header {
   display: flex;
   flex-direction: column;
-  font-size: 5.8em;
-  font-family: 'Press Start 2P', cursive;
-  text-shadow: rgba(0, 0, 0, .9) 0px 0px 60px;
-
-  z-index: 100;
 }
 .Button {
-  padding: 30px 70px;
+  padding: 10px 30px;
   font-size: 2em;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 60px;
   cursor: pointer;
-  
+  background: rgb(20,41,89);
+  background: linear-gradient(180deg, rgba(20,41,89,1) 47%, rgba(60,120,234,1) 100%);
+  color: white;
+  width: 6.5em;
 }
 .Menu {
   display: flex;
-  justify-content: center;
-  z-index: 100;
-  
+  align-self: center;
+  flex-direction: column;
+  gap: 20px;
+  /* z-index: 100; */
 }
