@@ -38,8 +38,8 @@
 .OptionsDescription {
   display: flex;
   flex-direction: column;
-  height: 10vh;
-  width: 40vw;
+  height: 20vh;
+  width: 50vw;
   align-self: center;
   background: -webkit-linear-gradient( rgba(60,120,234,1),  #eee);
   -webkit-background-clip: text;
@@ -51,7 +51,7 @@
   flex-direction: column;
   align-self: center;
   list-style-type: none;
-  height: 60vh;
+  height: 50vh;
   margin: 2em 0 0 0;
 
   li{

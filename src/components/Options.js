@@ -11,7 +11,7 @@ const Options = ({ setOptions }) => {
           This game works off a hidden input that is autofocused to obtain game
           controls. If for some reason you lose focus and controls, click the
           game window, and hit tab. It will re-focus the hidden input and game
-          controller will once again be functional
+          controller will once again be functional.
         </div>
         <ul className="OptionsList">
           <li>
