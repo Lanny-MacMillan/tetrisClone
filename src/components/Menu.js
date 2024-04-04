@@ -2,7 +2,7 @@ import React from "react";
 import "./Menu.css";
 import TetrisImg from "../assets/Tetris.png";
 
-const Menu = ({ start, options }) => {
+const Menu = ({ start, setOptions }) => {
   return (
     <div className="MenuContainer">
       <div className="Header">
@@ -20,7 +20,12 @@ const Menu = ({ start, options }) => {
         <button className="Button" onClick={start}>
           Start
         </button>
-        <button className="Button" onClick={options}>
+        <button
+          className="Button"
+          onClick={() => {
+            setOptions(true);
+          }}
+        >
           Options
         </button>
       </div>

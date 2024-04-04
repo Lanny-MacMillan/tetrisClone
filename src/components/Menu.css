@@ -7,25 +7,82 @@
   background-color: black;
   height: 100vh;
 }
+
+.OptionsContainer {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+
+.OptionsHeader {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 20vh;
+  font-size: 1em;
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  margin: 2em 0 0 0;
+
+  h1{
+    background: -webkit-linear-gradient(#eee, rgba(20,41,89,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.OptionsList {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  list-style-type: none;
+  height: 70vh;
+  li{
+    margin: 15px;
+  }
+  span{
+    color: rgba(60,120,234,1);
+  }
+}
+
+.OptionsButton {
+  padding: 15px 30px;
+  font-size: 1.3em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 60px;
+  cursor: pointer;
+  background: rgb(20,41,89);
+  /* background: linear-gradient( rgba(20,41,89,1) , rgba(60,120,234,1)); */
+  background: linear-gradient(180deg, rgba(20,41,89,1) 47%, rgba(60,120,234,1) 100%);
+  color: white;
+  width: 10em;
+  align-self: center;
+}
 .Header {
   display: flex;
   flex-direction: column;
 }
+
 .Button {
-  padding: 10px 30px;
-  font-size: 2em;
-  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 1.3em;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 60px;
   cursor: pointer;
   background: rgb(20,41,89);
+  /* background: linear-gradient( rgba(20,41,89,1) , rgba(60,120,234,1)); */
   background: linear-gradient(180deg, rgba(20,41,89,1) 47%, rgba(60,120,234,1) 100%);
   color: white;
-  width: 6.5em;
+  width: 10em;
 }
+
 .Menu {
   display: flex;
   align-self: center;
   flex-direction: column;
   gap: 20px;
-  /* z-index: 100; */
 }

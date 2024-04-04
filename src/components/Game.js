@@ -1,27 +1,33 @@
 import React from "react";
+import { useState } from "react";
 import Menu from "./Menu";
+import Options from "./Options";
 import { useGameOver } from "../hooks/useGameOver";
 import Tetris from "./Tetris/Tetris";
 
 const Game = ({ rows, columns }) => {
   const [gameOver, setGameOver, resetGameOver] = useGameOver();
+  const [options, setOptions] = useState(false);
 
   const start = () => {
     resetGameOver();
   };
-  const options = () => {
-    alert("Youve clicked options");
-  };
-  console.log("GAMEOVER STATE", gameOver);
+
+  const renderOptions = options && <Options setOptions={setOptions} />;
+
+  const renderMenu = gameOver && !options && (
+    <Menu start={start} setOptions={setOptions} />
+  );
+
+  const renderTetris = !gameOver && (
+    <Tetris setGameOver={setGameOver} rows={rows} columns={columns} />
+  );
+
   return (
     <div className="Game">
-      {gameOver ? (
-        // 1) send to game over page
-        // 2) game over page will redirect to Game.js
-        <Menu start={start} options={options} />
-      ) : (
-        <Tetris setGameOver={setGameOver} rows={rows} columns={columns} />
-      )}
+      {renderMenu}
+      {renderOptions}
+      {renderTetris}
     </div>
   );
 };
