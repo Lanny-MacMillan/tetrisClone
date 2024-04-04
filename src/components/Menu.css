@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-self: center;
-  height: 20vh;
+  height: 10vh;
   font-size: 1em;
   font-family: 'Press Start 2P';
   font-style: normal;
@@ -29,10 +29,21 @@
   margin: 2em 0 0 0;
 
   h1{
-    background: -webkit-linear-gradient(#eee, rgba(20,41,89,1));
+    background: -webkit-linear-gradient(   #eee, rgba(60,120,234,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+}
+
+.OptionsDescription {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 40vw;
+  align-self: center;
+  background: -webkit-linear-gradient( rgba(60,120,234,1),  #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .OptionsList {
@@ -40,7 +51,9 @@
   flex-direction: column;
   align-self: center;
   list-style-type: none;
-  height: 70vh;
+  height: 60vh;
+  margin: 2em 0 0 0;
+
   li{
     margin: 15px;
   }
